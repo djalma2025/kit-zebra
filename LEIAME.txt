@@ -1,0 +1,37 @@
+ZEBRA (etiqueta do Protheus) - O QUE FAZER QUANDO NAO IMPRIMIR
+==============================================================
+
+Rodar com DUPLO CLIQUE, na ordem, e parar quando voltar a imprimir.
+
+1_DIAGNOSTICO.bat
+   Gera um arquivo diag_*.txt nesta pasta com o estado da impressora.
+   Se for pedir ajuda, mande esse arquivo.
+
+5_LIMPAR_FILA.bat
+   Cancela etiquetas presas na fila (ex.: depois de desligar a Zebra no meio).
+   Depois: desligar a Zebra, esperar 10 s, ligar.
+
+2_TESTE_LPT1.bat
+   Imprime UMA etiqueta "TESTE LPT1 OK" pelo mesmo caminho do Protheus.
+   - Saiu: o Windows esta ok -> o problema e no Protheus.
+   - Nao saiu: seguir abaixo.
+
+4_MAPEAR_LPT1.bat
+   Refaz a ligacao LPT1 -> \\localhost\ZEBRA (sem admin). Depois rodar o 2 de novo.
+
+3_COMPARTILHAR_ZEBRA_ADMIN.bat
+   PRECISA DE ADMINISTRADOR (TI): botao direito > Executar como administrador.
+   Usar depois de trocar a impressora (o Windows cria "Copia 1" e perde o
+   compartilhamento ZEBRA). Depois rodar o 4 e o 2.
+
+NA IMPRESSORA
+   - Luz verde fixa = ok. Vermelha/piscando = abrir a tampa, reassentar etiqueta e ribbon.
+   - Calibrar: segurar o botao FEED ate a luz piscar 2 vezes e soltar.
+
+NO PROTHEUS
+   - O WebAgent precisa estar aberto (icone perto do relogio).
+   - Etiqueta de volume: SIGAPCP > Miscelanea > Impressoes > Impressao de Etiqueta - Volume.
+
+SEGURANCA
+   Uma pagina que pede "Windows + R", "cmd" ou "Ctrl+V" para "verificar que voce e humano"
+   e GOLPE. Feche a pagina e nao execute nada.
